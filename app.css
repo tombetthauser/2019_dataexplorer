@@ -79,8 +79,8 @@ th:nth-child(1), td:nth-child(1) {
 }
 
 #welcome-div > p:nth-child(1) {
-  text-decoration: underline;
-  text-decoration-style: wavy;
+  /* text-decoration: underline; */
+  /* text-decoration-style: wavy; */
 }
 
 #x-dropdown-div {
@@ -91,7 +91,7 @@ th:nth-child(1), td:nth-child(1) {
 
 #x-dropdown-label, #y-dropdown-label {
   text-decoration: underline;
-  text-decoration-style: wavy;
+  /* text-decoration-style: wavy; */
   width: 500px;
 }
 
