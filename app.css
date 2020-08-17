@@ -133,6 +133,6 @@ a {
   color: white;
 }
 
-#sorted-checkbox {
+#sorted-checkbox, #split-checkbox {
   filter: invert(1);
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>Welcome to Data</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
@@ -37,7 +37,9 @@
     <input id="submit-button" type="submit" value="Create Data Table">
     <span id="reset-button">Reset Table</span>
     <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted" checked>
-    <label for="vehicle1">sort table</label><br>
+    <label for="sorted-checkbox">sort table</label>
+    <input type="checkbox" id="split-checkbox" name="split" value="split">
+    <label for="split-checkbox">split responses</label>
   </form>
 
   <div id="table-div"></div>

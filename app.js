@@ -5,6 +5,7 @@ class Table {
     this.tableHTML = null;
     this.csvData = null;
     this.allQuestions = [];
+    this.splitChars = [',', ';']
 
     this.xQuestion = "What is your ethnicity / race?";
     this.xOptions = [];
@@ -67,7 +68,11 @@ class Table {
       const xResponse = this.xResponses[i];
       const yResponse = this.yResponses[i];
 
-      if (yResponse.toLowerCase() === yOption.toLowerCase() && xResponse.toLowerCase() === xOption.toLowerCase()) count ++;
+      if (document.querySelector('#split-checkbox').checked) {
+        if (yResponse.toLowerCase().includes(yOption.toLowerCase()) && xResponse.toLowerCase().includes(xOption.toLowerCase())) count ++;
+      } else {
+        if (yResponse.toLowerCase() === yOption.toLowerCase() && xResponse.toLowerCase() === xOption.toLowerCase()) count ++;
+      }
     }
 
     return count;
@@ -77,35 +82,75 @@ class Table {
     this.xOptions = this.xOptions.sort();
     this.yOptions = this.yOptions.sort();
   }
+
+  splitQuestion(inputStr, splitChars = [',', ';', ' ']) {
+    let option = inputStr.slice()
+
+    for (let i = 0; i < option.length; i++) {
+      if (splitChars.includes(option[i])) {
+        option = option.slice(0, i) + '⚠︎' + option.slice(i + 1);
+      }
+    }
+
+    let arr = option.split('⚠︎')
+    arr = arr.map(ele => ele.toLowerCase().trim());
+
+    return arr;
+  }
   
   fetchYOptions() {
     this.yOptions = [];
-    const yResponseArr = [];
+    const responseArr = [];
     d3.select('*')
       .data(this.inputd3Data)
       .enter()
       .text(data => {
         const question = data[this.yQuestion].toLowerCase().trim();
-        if (yResponseArr.includes(question) === false) {
-          yResponseArr.push(question);
-          this.yOptions.push(question);
-        };
+        if (
+            document.querySelector('#split-checkbox').checked && 
+            (question.includes(",") || question.includes(';') || question.includes(' '))
+          ) {
+          const splitQuestion = this.splitQuestion(question);
+          splitQuestion.forEach(question => {
+            if (responseArr.includes(question) === false) {
+              responseArr.push(question);
+              this.yOptions.push(question);
+            };
+          })
+        } else {
+          if (responseArr.includes(question) === false) {
+            responseArr.push(question);
+            this.yOptions.push(question);
+          };
+        }
       })
-      console.log(this.yOptions)
   }
   
   fetchXOptions() {
     this.xOptions = [];
-    const xResponseArr = [];
+    const responseArr = [];
     d3.select('*')
       .data(this.inputd3Data)
       .enter()
       .text(data => {
         const question = data[this.xQuestion].toLowerCase().trim();
-        if (xResponseArr.includes(question) === false) {
-          xResponseArr.push(question);
-          this.xOptions.push(question);
-        };
+        if (
+            document.querySelector('#split-checkbox').checked &&
+            (question.includes(",") || question.includes(';') || question.includes(' '))
+          ) {
+          const splitQuestion = this.splitQuestion(question);
+          splitQuestion.forEach(question => {
+            if (responseArr.includes(question) === false) {
+              responseArr.push(question);
+              this.xOptions.push(question);
+            };
+          })
+        } else {
+          if (responseArr.includes(question) === false) {
+            responseArr.push(question);
+            this.xOptions.push(question);
+          };
+        }
       })
   }
 
@@ -113,13 +158,13 @@ class Table {
     let html = [];
     html.push(`<table class="my-table"><tr id="top-row"><th></th>`);
     this.xOptions.forEach(text => { 
-      const xText = text.length > 0 ? text.toLowerCase() : "(no response)";
+      const xText = text.length > 0 ? text.toLowerCase() : "(empty input)";
       html.push(`<th>${xText}</th>`)
     })
     html.push(`</tr>`);
     for (let i = 0; i < this.yOptions.length; i++) {
       let yText = this.yOptions[i].toLowerCase();
-      yText = yText.length > 0 ? yText : "(no response)";
+      yText = yText.length > 0 ? yText : "(empty input)";
       if (i === this.yOptions.length - 1) {
         html.push(`<tr><th class="left-bottom-th">${yText}</th>`);
       } else {
