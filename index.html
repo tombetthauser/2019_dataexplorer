@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Data</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+<body>
+
+  <div id="welcome-div">
+    <p>Welcome to the SotA 2019 Data Explorer 2.0.1</p>
+    <p>An interface for cross-referencing raw data from the 2019 State of the Arts Survey results.</p>
+    <p>
+      Below are two drop down selectors that choose any two questions from the survey to cross-reference results from. 
+      "Render Data Table" will display a table of numbers indicating how many survey participants chose the respective responses 
+      that line up vertically and horizontally from the number's location.
+    </p>
+    <p>
+      The survey covered 89 questions, meaning that there are 7,832 possible tables to explore (89!/(89-2)!). If you would like to explore
+      the data visualizations (graphs, pie charts etc) for individual question response sets check out the 2019 survey website linked below.
+    </p>
+    full survey website --> <a target="new" href="http://www.sotasurvey.org/2019">http://www.sotasurvey.org/2019</a>
+  </div>
+
+  <form id="dropdown-form">
+    <div id="y-dropdown-div">
+      <label id="y-dropdown-label" for="y-dropdown">Horizontal Question:</label>
+      <select id="y-dropdown" name="y-dropdown"></select>
+    </div>
+    <div id="x-dropdown-div">
+      <label id="x-dropdown-label" for="x-dropdown">Vertical Question:</label>
+      <select id="x-dropdown" name="x-question"></select>
+    </div>
+    <input id="submit-button" type="submit" value="Create Data Table">
+    <span id="reset-button">Reset Table</span>
+    <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted" checked>
+    <label for="vehicle1">sort table</label><br>
+  </form>
+
+  <div id="table-div"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

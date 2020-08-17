@@ -1,0 +1,138 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-weight: 50;
+}
+
+.craigslist {
+  border: 5px outset lightgray;
+  background-color: lightgray;
+  width: 200px;
+  padding: 15px 25px;
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+  margin: 50px 50px 100px 10px;
+}
+
+tr {
+  text-align: center;
+}
+
+th, td {
+  padding: 3px 7px;
+}
+
+tr:nth-child(1) {
+  border-bottom: 1px solid white;
+}
+
+th:nth-child(1), td:nth-child(1) {
+  border-right: 1px solid white;
+  text-align: right;
+}
+
+#y-dropdown, #x-dropdown {
+  background-color: white;
+  color: black;
+  border: none;
+  font-family: monospace;
+  appearance: none;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+#submit-button, #reset-button {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  cursor: pointer;
+  padding: 5px 50px;
+  font-size: 12.5px;
+  margin-right: 5px;
+}
+
+#dropdown-form {
+  margin-bottom: 50px;
+  border: 1px solid white;
+  margin: 10px 20px 10px 10px;
+  padding: 25px;
+  box-shadow: -10px 10px 0 white;
+  min-width: 600px;
+  max-width: 1000px;
+}
+
+#welcome-div {
+  margin-bottom: 50px;
+  border: 1px solid white;
+  margin: 20px 20px 30px 10px;
+  padding: 10px 25px 25px;
+  box-shadow: -10px 10px 0 white;
+  min-width: 600px;
+  word-wrap: break-word;
+  max-width: 1000px;
+  overflow-y: hidden;
+}
+
+#welcome-div > p:nth-child(1) {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+#x-dropdown-div {
+  border-bottom: 1px solid white;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+#x-dropdown-label, #y-dropdown-label {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  width: 500px;
+}
+
+#x-dropdown, #y-dropdown {
+  margin-top: 15px;
+  margin-bottom: 15px;
+    max-width: 98%;
+
+}
+
+#top-row > th {
+  border-left: 1px dashed #fff;
+  min-width: 100px;
+  font-weight: 50;
+}
+
+#top-row > th:nth-of-type(1) {
+  border-left: none;
+}
+
+tr > th:nth-child(1) {
+  min-width: 150px;
+  font-weight: 50;
+}
+
+.table-numbers {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.left-column-th {
+  border-bottom: 1px dashed white;
+}
+
+.left-bottom-th {
+  border-bottom: none;
+}
+
+a {
+  color: white;
+}
+
+#sorted-checkbox {
+  filter: invert(1);
+}
