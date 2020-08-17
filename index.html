@@ -11,7 +11,7 @@
 <body>
 
   <div id="welcome-div">
-      <p>✌️ Welcome to the SotA 2019 Data Explorer 2.0.2</p>
+      <p>✌️ Welcome to the SotA 2019 Data Explorer 2.1.0</p>
     <p>An interface for cross-referencing raw data from the 2019 State of the Arts Survey results.</p>
     <p>
       Below are two drop down selectors that choose any two questions from the survey to cross-reference results from. 
@@ -34,13 +34,17 @@
       <label id="x-dropdown-label" for="x-dropdown">Vertical Question:</label>
       <select id="x-dropdown" name="x-question"></select>
     </div>
-    <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted" checked>
-    <label for="sorted-checkbox">sort table</label>
-    <input type="checkbox" id="split-checkbox" name="split" value="split">
-    <label for="split-checkbox">split responses</label>
-    <br><br>
-    <input id="submit-button" type="submit" value="Create Data Table">
-    <span id="reset-button">Reset Table</span>
+
+    <div class="checkboxes-div">
+      <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted" checked>
+      <label for="sorted-checkbox">sort table</label>
+      <input type="checkbox" id="split-checkbox" name="split" value="split">
+      <label for="split-checkbox">split responses</label>
+    </div>
+    <div class="buttons-div">
+      <span id="submit-button">Create Data Table</span>
+      <span id="reset-button">Reset Table</span>
+    </div>
   </form>
 
   <div id="table-div"></div>

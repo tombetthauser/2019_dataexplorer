@@ -199,9 +199,9 @@ class Table {
     this.allQuestions = Object.keys(this.inputd3Data[0])
   }
 
-  setDropdownSubmitListener(formSelector = '#dropdown-form') {
-    document.querySelector(formSelector).addEventListener("submit", e => {
-      e.preventDefault();
+  setDropdownSubmitListener() {
+    document.querySelector("#submit-button").addEventListener("click", () => {
+      // e.preventDefault();
 
       var yDropdown = document.querySelector("#y-dropdown");
       var xDropdown = document.querySelector("#x-dropdown");

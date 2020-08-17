@@ -53,7 +53,7 @@ th:nth-child(1), td:nth-child(1) {
   cursor: pointer;
   padding: 5px 50px;
   font-size: 12.5px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 #dropdown-form {
@@ -86,7 +86,7 @@ th:nth-child(1), td:nth-child(1) {
 #x-dropdown-div {
   border-bottom: 1px solid white;
   padding-bottom: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 #x-dropdown-label, #y-dropdown-label {
@@ -135,4 +135,26 @@ a {
 
 #sorted-checkbox, #split-checkbox {
   filter: invert(1);
+}
+
+.checkboxes-div {
+  height: 30px;
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.buttons-div {
+  height: 30px;
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+}
+
+.checkboxes-div > label {
+  margin-right: 10px;
+}
+
+.checkboxes-div > input {
+  margin-right: 7.5px;
 }
