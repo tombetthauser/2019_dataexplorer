@@ -51,6 +51,7 @@ class Table {
   }
 
   populateValuesTable() {
+    this.tableValueMax = 0;
     this.createBlankTable()
     for (let i = 0; i < this.yOptions.length; i++) {
       for (let j = 0; j < this.xOptions.length; j++) {
