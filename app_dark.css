@@ -133,8 +133,9 @@ a {
   color: white;
 }
 
-#sorted-checkbox, #split-checkbox {
+#sorted-checkbox, #split-checkbox, #night-checkbox {
   filter: invert(1);
+  cursor: pointer;
 }
 
 .checkboxes-div {

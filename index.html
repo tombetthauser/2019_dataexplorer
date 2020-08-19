@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.35">
   <title>Welcome to Data</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="app.css">
+  <link id="style-link" rel="stylesheet" href="app_light.css">
   <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 <body>
 
   <div id="welcome-div">
-      <p>✌️ Welcome to the SotA 2019 Data Explorer 2.1.0</p>
+      <p>✌️ Welcome to the SotA 2019 Data Explorer 2.1.1</p>
     <p>An interface for cross-referencing raw data from the 2019 State of the Arts Survey results.</p>
     <p>
       Below are two drop down selectors that choose any two questions from the survey to cross-reference results from. 
@@ -34,9 +34,10 @@
       <label id="x-dropdown-label" for="x-dropdown">Vertical Question:</label>
       <select id="x-dropdown" name="x-question"></select>
     </div>
-
     <div class="checkboxes-div">
-      <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted" checked>
+      <input type="checkbox" id="night-checkbox" name="night" value="night">
+      <label for="sorted-checkbox">night mode</label>
+      <input type="checkbox" id="sorted-checkbox" name="sorted" value="sorted">
       <label for="sorted-checkbox">sort table</label>
       <input type="checkbox" id="split-checkbox" name="split" value="split">
       <label for="split-checkbox">split responses</label>
@@ -46,6 +47,17 @@
       <span id="reset-button">Reset Table</span>
     </div>
   </form>
+
+  <!-- <div id="filter-div">
+    <div class="checkboxes-div">
+      <input type="checkbox" id="totals-checkbox" name="totals" value="totals">
+      <label for="sorted-checkbox">show totals</label>
+      <input type="checkbox" id="x-percent-checkbox" name="x-percent" value="x-percent">
+      <label for="sorted-checkbox">x percentages</label>
+      <input type="checkbox" id="y-percent-checkbox" name="y-percent" value="y-percent">
+      <label for="split-checkbox">y percentages</label>
+    </div>
+  </div> -->
 
   <div id="table-div"></div>
 
