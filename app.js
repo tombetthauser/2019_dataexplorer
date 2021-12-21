@@ -187,8 +187,9 @@ class Table {
   }
 
   populateDropDowns() {
-    const html = [];
-    for (let i = 0; i < this.allQuestions.length; i++) {
+    const html = ["<option selected disabled>Select Question...</option>"];
+    // start i at 1 temporarily to skip timestamp
+    for (let i = 1; i < this.allQuestions.length; i++) {
       const question = this.allQuestions[i];
       html.push(`<option value="${question}">${question}</option>`);
     }
@@ -232,16 +233,16 @@ class Table {
   }
 
   addNightModeListener() {
-    const nightCheckbox = document.querySelector("#night-checkbox");
-    const styleLink = document.querySelector("#style-link");
+    // const nightCheckbox = document.querySelector("#night-checkbox");
+    // const styleLink = document.querySelector("#style-link");
 
-    nightCheckbox.addEventListener("change", () => {
-      if (nightCheckbox.checked === true) {
-        styleLink.href = "app_dark.css"
-      } else {
-        styleLink.href = "app_light.css"
-      }
-    })
+    // nightCheckbox.addEventListener("change", () => {
+    //   if (nightCheckbox.checked === true) {
+    //     styleLink.href = "app_dark.css"
+    //   } else {
+    //     styleLink.href = "app_light.css"
+    //   }
+    // })
   }
 }
 
