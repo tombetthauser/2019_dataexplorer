@@ -1,7 +1,7 @@
 class Table {
   constructor(inputd3Data) {
     this.inputd3Data = inputd3Data;
-    this.apiRoute = 'https://www.sotasurvey.org/2019.csv';
+    this.apiRoute = 'https://www.sotasurvey.org/data.csv';
     this.tableHTML = null;
     this.csvData = null;
     this.allQuestions = [];
