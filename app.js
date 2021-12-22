@@ -246,7 +246,7 @@ class Table {
   }
 }
 
-d3.csv('https://www.sotasurvey.org/2019.csv', data => {
+d3.csv(this.apiRoute, data => {
   const newTable = new Table(data);
   newTable.getAllQuestions()
   newTable.populateDropDowns();
